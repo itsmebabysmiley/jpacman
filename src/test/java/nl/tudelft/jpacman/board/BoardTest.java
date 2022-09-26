@@ -40,4 +40,21 @@ public class BoardTest {
         Square result = board.squareAt(x,y);
         assertThat(result).isEqualTo(grid[x][y]);
     }
+
+    @Test
+    void testwithinBorders(){
+        Square s = new BasicSquare();
+        Square[][] grid = {{s}};
+        board = new Board(grid);
+        boolean isValid = board.withinBorders(0,0);
+        assertThat(isValid).isEqualTo(true);
+        isValid = board.withinBorders(0,1);
+        assertThat(isValid).isEqualTo(false);
+        isValid = board.withinBorders(-1,-1);
+        assertThat(isValid).isEqualTo(false);
+        isValid = board.withinBorders(1,0);
+        assertThat(isValid).isEqualTo(false);
+        isValid = board.withinBorders(0,-1);
+        assertThat(isValid).isEqualTo(false);
+    }
 }
