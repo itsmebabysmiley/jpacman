@@ -19,8 +19,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BoardTest {
 
     private Board board;
-    private final int MAX_WIDTH = 1;
-    private final int MAX_HIGHT = 1;
+    private final int MAXWIDTH = 1;
+    private final int MAXHIGHT = 1;
 
     @BeforeEach
     void setup(){
@@ -40,8 +40,8 @@ public class BoardTest {
         Square s = new BasicSquare();
         Square[][] grid = {{s}};
         board = new Board(grid);
-        assertThat(board.getWidth()).isEqualTo(MAX_WIDTH);
-        assertThat(board.getHeight()).isEqualTo(MAX_HIGHT);
+        assertThat(board.getWidth()).isEqualTo(MAXWIDTH);
+        assertThat(board.getHeight()).isEqualTo(MAXHIGHT);
     }
 
     @Test
