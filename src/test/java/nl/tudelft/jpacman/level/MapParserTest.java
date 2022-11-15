@@ -1,14 +1,13 @@
 package nl.tudelft.jpacman.level;
 import nl.tudelft.jpacman.board.BoardFactory;
 import nl.tudelft.jpacman.npc.ghost.Blinky;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 
 
 /**
  * This is a test class for MapParser.
  */
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
 public class MapParserTest {
     @Mock
     private BoardFactory boardFactory;
