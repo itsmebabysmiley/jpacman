@@ -40,7 +40,7 @@ public class BoardTest {
         Square s = new BasicSquare();
         Square[][] grid = {{s}};
         Board board = new Board(grid);
-        boolean isValid = board.withinBorders(0,0);
+        boolean isValid = board.withinBorders(0, 0);
         assertThat(isValid).isEqualTo(true);
         isValid = board.withinBorders(0, 1);
         assertThat(isValid).isEqualTo(false);
