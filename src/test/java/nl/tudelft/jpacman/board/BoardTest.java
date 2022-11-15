@@ -1,44 +1,35 @@
 package nl.tudelft.jpacman.board;
-
-import org.junit.jupiter.api.BeforeEach;
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.*;
+
+/**
+ * Testing board class.
+ *
+ * @author Tasha Settewong 
+ */
 public class BoardTest {
-
-    private Board board;
-    private final int MAX_WIDTH = 1;
-    private final int MAX_HIGHT = 1;
-
-    @BeforeEach
-    void setup(){
-
-
-    }
-
-    /**
-     * 4.	Create a test class for Board in which you construct a board with
-     * the correct (1×1 is large enough) grid, with a correct BasicSquare on it.
-     * Name your class BoardTest and put it in the src/test folder in the package
-     * nl.tudelft.jpacman.board. Run your test. Since the board is valid your test
-     * should pass. Capture the screenshot of your test result and paste it below.
+     /**
+     * Do the invarant method perform correctly?.
      */
     @Test
-    void testValidBoard(){
-        Square s = new BasicSquare();
-        Square[][] grid = {{s}};
-        board = new Board(grid);
-        assertThat(board.getWidth()).isEqualTo(MAX_WIDTH);
-        assertThat(board.getHeight()).isEqualTo(MAX_HIGHT);
+    void testInvariant() {
+        Square row = new BasicSquare();
+        Square[][] grid = new Square[1][1];
+        grid[0][0] = row;
+        Board board = new Board(grid);
+        assertThat(board.invariant()).isTrue();
     }
-
+    
+     /**
+     * Do the squareAt method perform correctly?.
+     */
     @Test
-    void testSquareAt(){
-        Square s = new BasicSquare();
-        Square[][] grid = {{null}};
-        board = new Board(grid);
-        int x = 0, y = 0;
-        Square result = board.squareAt(x,y);
-        assertThat(result).isEqualTo(grid[x][y]);
+    void testSquareAt() {
+        Square row = new BasicSquare();
+        Square[][] grid = new Square[1][1];
+        grid[0][0] = row;
+        Board board = new Board(grid);
+        assertThat(board.squareAt(0, 0)).isEqualTo(grid[0][0]);
     }
 
     @Test
