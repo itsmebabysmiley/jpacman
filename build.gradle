@@ -81,19 +81,6 @@ pmd {
     ruleSets = []
 }
 
-tasks.withType(com.github.spotbugs.SpotBugsTask) {
-    reports {
-        xml.enabled = false
-        html.enabled = true
-    }
-}
-spotbugsTest {
-    reports {
-        xml.enabled = false
-        html.enabled = true
-
-    }
-}
 
 task staticAnalysis(type: GradleBuild) {
     tasks = [
@@ -104,9 +91,6 @@ task staticAnalysis(type: GradleBuild) {
         'pmdMain',
         'pmdTest',
         'pmdDefaultTest',
-        'spotbugsMain',
-        'spotbugsTest',
-        'spotbugsDefaultTest',
     ]
 }
 
