@@ -25,7 +25,7 @@ public class MapParserTest {
     @Mock
     private Blinky blinky;
 
-    private final int SPECIAL_SUM = 10;
+    private final int checkStyleSuck = 10;
     /**
      * Test for the parseMap method (good map).
      */
@@ -43,7 +43,7 @@ public class MapParserTest {
         mapParser.parseMap(map);
         Mockito.verify(levelFactory, Mockito.times(1)).createGhost();
         Mockito.verify(boardFactory,
-            Mockito.times(SPECIAL_SUM)).createGround();
+            Mockito.times(checkStyleSuck)).createGround();
     }
 
     /**
