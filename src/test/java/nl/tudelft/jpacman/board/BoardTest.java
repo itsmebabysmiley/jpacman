@@ -36,7 +36,7 @@ public class BoardTest {
     void testwithinBorders(){
         Square s = new BasicSquare();
         Square[][] grid = {{s}};
-        board = new Board(grid);
+        Board board = new Board(grid);
         boolean isValid = board.withinBorders(0,0);
         assertThat(isValid).isEqualTo(true);
         isValid = board.withinBorders(0,1);
