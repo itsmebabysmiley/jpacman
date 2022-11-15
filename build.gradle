@@ -98,7 +98,6 @@ task staticAnalysis(type: GradleBuild) {
         'pmdTest',
         'pmdDefaultTest',
         'spotbugsMain',
-        'spotbugsTest',
         'spotbugsDefaultTest',
     ]
 }
