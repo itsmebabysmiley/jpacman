@@ -67,7 +67,7 @@ public class MapParserTest {
                 map.add("############");
                 mapParser.parseMap(map);
             });
-        Assertions.assertEquals(PacmanConfigurationException.class, thrown.getMessage());
+        Assertions.assertEquals("Invalid character at 1,1: A", thrown.getMessage());
     }
 
 
